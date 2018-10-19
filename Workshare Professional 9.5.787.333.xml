@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AdminArsenal.Export Code="PDQDeploy" Name="PDQ Deploy" Version="17.1.0.0" MinimumVersion="15.0">
+  <Package>
+    <CurrentLibraryPackageVersionId value="null" />
+    <PackageDefinition name="Definition">
+      <Conditions type="list">
+        <PackageStepCondition>
+          <Architecture>Both</Architecture>
+          <Version>All</Version>
+          <TypeName>OperatingSystem</TypeName>
+        </PackageStepCondition>
+        <PackageStepCondition>
+          <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+          <TypeName>LoggedOnUser</TypeName>
+        </PackageStepCondition>
+        <PackageStepCondition>
+          <ConditionMode>None</ConditionMode>
+          <InventoryCollectionId value="null" />
+          <InventoryCollectionName></InventoryCollectionName>
+          <TypeName>Collection</TypeName>
+        </PackageStepCondition>
+      </Conditions>
+      <CopyMode>Default</CopyMode>
+      <DelayedApprovalTimeSpan>7.00:00:00</DelayedApprovalTimeSpan>
+      <DownloadApprovalMode>Manual</DownloadApprovalMode>
+      <InventoryScanProfileId value="null" />
+      <IsDownloadApprovalModeInherited value="true" />
+      <ScanAfterDeployment value="null" />
+      <Steps type="list">
+        <InstallStep>
+          <CustomCommandLine>msiexec.exe /i "Workshare.Professional.msi" REINSTALL=ALL REINSTALLMODE=vomus ALLUSERS=1 SKIP_UPGRADE_WARNING=1 INSTALL_PROTECT=1 INSTALL_COMPARE=1 INSTALL_WORLDOX=1 INSTALL_WORD_INTEGRATION=1 INSTALL_EXCEL_INTEGRATION=1 INSTALL_OUTLOOK_INTEGRATION=1 /qn /norestart /log output.log</CustomCommandLine>
+          <FileName>\\wild-mgmt01\IT REPOSITORY\Workshare\Workshare Build 9.5.787.333 (December 13 2017)\MSI Packages\Workshare.Professional.msi</FileName>
+          <Files></Files>
+          <IncludeDirectory value="false" />
+          <LeaveInstallFile value="false" />
+          <MsiOperation>Install</MsiOperation>
+          <MsiQuiet value="true" />
+          <MsiRestart>Never</MsiRestart>
+          <Parameters></Parameters>
+          <SuccessCodes>0,1641,3010,2359302</SuccessCodes>
+          <RunAs value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>StopDeploymentFail</ErrorMode>
+          <Title>INSTALL Workshare Pro</Title>
+          <TypeName>Install</TypeName>
+          <IsEnabled value="true" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </InstallStep>
+        <RebootStep>
+          <Message>Rebooting to complete Workshare installation!</Message>
+          <ShutdownOnly value="false" />
+          <Timeout value="15" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>Continue</ErrorMode>
+          <Title>Reboot</Title>
+          <TypeName>Reboot</TypeName>
+          <IsEnabled value="true" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </RebootStep>
+      </Steps>
+      <Timeout value="60" />
+      <UseCustomTimeout value="false" />
+      <RunAs value="null" />
+    </PackageDefinition>
+    <Description></Description>
+    <NewLibraryPackageVersionId value="null" />
+    <OriginalId value="null" />
+    <Version></Version>
+    <IsAutoDownload value="false" />
+    <FolderId value="11" />
+    <LibraryPackageVersionId value="null" />
+    <Name>Workshare Professional 9.5.787.333</Name>
+    <Path>Packages\Standard Apps\INSTALL\Workshare Professional 9.5.787.333</Path>
+    <PackageDisplaySettings name="DisplaySettings">
+      <DisplayType>Normal</DisplayType>
+      <IconKey>Icon-Package</IconKey>
+      <SortOrder value="5" />
+    </PackageDisplaySettings>
+  </Package>
+</AdminArsenal.Export>

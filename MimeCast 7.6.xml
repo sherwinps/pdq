@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AdminArsenal.Export Code="PDQDeploy" Name="PDQ Deploy" Version="17.1.0.0" MinimumVersion="15.0">
+  <Package>
+    <CurrentLibraryPackageVersionId value="null" />
+    <PackageDefinition name="Definition">
+      <Conditions type="list">
+        <PackageStepCondition>
+          <Architecture>Both</Architecture>
+          <Version>All</Version>
+          <TypeName>OperatingSystem</TypeName>
+        </PackageStepCondition>
+        <PackageStepCondition>
+          <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+          <TypeName>LoggedOnUser</TypeName>
+        </PackageStepCondition>
+        <PackageStepCondition>
+          <ConditionMode>None</ConditionMode>
+          <InventoryCollectionId value="null" />
+          <InventoryCollectionName></InventoryCollectionName>
+          <TypeName>Collection</TypeName>
+        </PackageStepCondition>
+      </Conditions>
+      <CopyMode>Default</CopyMode>
+      <DelayedApprovalTimeSpan>7.00:00:00</DelayedApprovalTimeSpan>
+      <DownloadApprovalMode>Manual</DownloadApprovalMode>
+      <InventoryScanProfileId value="null" />
+      <IsDownloadApprovalModeInherited value="true" />
+      <ScanAfterDeployment value="null" />
+      <Steps type="list">
+        <CommandStep>
+          <Command>CALL "ShutdownWorldox.bat"</Command>
+          <Files>\\wild-mgmt01\IT REPOSITORY\PDQ\Scripts\ShutdownWorldox.bat</Files>
+          <SuccessCodes>0,128</SuccessCodes>
+          <RunAs value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>Continue</ErrorMode>
+          <Title>SHUTDOWN WORLDOX</Title>
+          <TypeName>Command</TypeName>
+          <IsEnabled value="true" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </CommandStep>
+        <CommandStep>
+          <Command>CALL "ShutdownOffice2016.bat"</Command>
+          <Files>\\wild-mgmt01\IT REPOSITORY\PDQ\Scripts\ShutdownOffice2016.bat</Files>
+          <SuccessCodes>0,128</SuccessCodes>
+          <RunAs value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>Continue</ErrorMode>
+          <Title>SHUTDOWN MS OFFICE 2016</Title>
+          <TypeName>Command</TypeName>
+          <IsEnabled value="true" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </CommandStep>
+        <InstallStep>
+          <CustomCommandLine>msiexec.exe /i "Mimecast for Outlook 7.6.0.26320 (32 bit).msi" ALLUSERS=1 /qn /norestart /log output.log</CustomCommandLine>
+          <FileName>\\wild-mgmt01\IT REPOSITORY\mimecast\LATEST VERSION - 7.6\Mimecast for Outlook 7.6.0.26320 (32 bit)\Mimecast for Outlook 7.6.0.26320 (32 bit).msi</FileName>
+          <Files></Files>
+          <IncludeDirectory value="false" />
+          <LeaveInstallFile value="false" />
+          <MsiOperation>Install</MsiOperation>
+          <MsiQuiet value="true" />
+          <MsiRestart>Never</MsiRestart>
+          <Parameters></Parameters>
+          <SuccessCodes>0,1641,3010,2359302</SuccessCodes>
+          <RunAs value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>StopDeploymentFail</ErrorMode>
+          <Title>INSTALL APP</Title>
+          <TypeName>Install</TypeName>
+          <IsEnabled value="true" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </InstallStep>
+      </Steps>
+      <Timeout value="60" />
+      <UseCustomTimeout value="false" />
+      <RunAs value="null" />
+    </PackageDefinition>
+    <Description></Description>
+    <NewLibraryPackageVersionId value="null" />
+    <OriginalId value="null" />
+    <Version>7.3.2061.19940</Version>
+    <IsAutoDownload value="false" />
+    <FolderId value="11" />
+    <LibraryPackageVersionId value="null" />
+    <Name>MimeCast 7.6</Name>
+    <Path>Packages\Standard Apps\INSTALL\MimeCast 7.6</Path>
+    <PackageDisplaySettings name="DisplaySettings">
+      <DisplayType>Normal</DisplayType>
+      <IconKey>Icon-Package</IconKey>
+      <SortOrder value="3" />
+    </PackageDisplaySettings>
+  </Package>
+</AdminArsenal.Export>
